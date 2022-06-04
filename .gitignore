@@ -8,3 +8,5 @@ src/files/vendor/jquery
 .docpad.db
 .*.sw?
 src/files/vendor/
+docs/build
+site/

@@ -1,43 +1,58 @@
-# The meta project aggregator for Nightscout
+# Nightscout Documentation
 
-Please visit http://nightscout.github.io/ for more details.
+This is the repo that contains the source files for the [Nightscout Docs](https://nightscout.github.io/) site.
 
-This is the source code for that site.
-See project wiki's for more details.
+## Contributing
 
-Use [issues](https://github.com/nightscout/nightscout.github.io/issues)
-to request clarifications, additional FAQs.
+To suggest changes, fork this repository, edit the files, and submit your changes as a pull request.
 
-Or use the wiki to submit corrections/typos.
-And of course, we accept pull requests.
+The developer discussion of Nightscout happens on our Discord channel at https://discord.gg/zg7CvCQ
 
+### Previewing Changes
+To preview your work as you edit you must set up two python packages that are used to create this site using [MkDocs](http://www.mkdocs.org/). They are `mkdocs`, and `mkdocs-bootswatch`.
 
-## Getting Started, how to run the site
+Review [Properly Installing Python](http://docs.python-guide.org/en/latest/starting/installation/) for help getting Python installed. MkDocs works with Python 2.7, 3.3+, and pypy.
 
-1. Clone the project and run the server
+* Install python modules
 
-  ``` bash
-  git clone git://github.com/nightscout/nightscout.github.io.git
-  cd nightscout.github.io
-  npm install
-  ./node_modules/.bin/docpad run
-  ```
+```bash
+$ cd <nightscout docs location>
+$ pip install -r requirements.txt
+```
 
-1. [Open http://localhost:9778/](http://localhost:9778/)
+* Install [Material](https://squidfunk.github.io/mkdocs-material/) theme
 
-1. Start hacking away by modifying the `src` directory
+```bash
+$ pip install mkdocs-material
+```
 
+* Run mkdocs server locally
 
-## License
+```bash
+$ cd <nightscout docs location>
+$ mkdocs serve
+```
 
-This skeleton is made ["public domain"](http://en.wikipedia.org/wiki/Public_domain) using the [Creative Commons Zero](http://creativecommons.org/publicdomain/zero/1.0/), as such before you publish your website you should place your desired license here and within the `LICENSE.md` file.
+* Preview docs in browser. Most changes will update automatically as you edit. Configuration and navigation changes will require restarting the MkDocs server.
+* Optionally, you can share the preview with others by uploading them to your repository's `gh-pages` branch
+```bash
+$ mkdocs gh-deploy
+```
 
-If you are wanting to open-source your website, we suggest using the [Creative Commons Attribution License](http://creativecommons.org/licenses/by/3.0/) for content and the [MIT License](http://creativecommons.org/licenses/MIT/) for code. In which case you'd probably want to use the following as your license:
+## Conventions
 
-  Unless stated otherwise, all content is licensed under the [Creative
-  Commons Attribution
-  License](http://creativecommons.org/licenses/by/3.0/) and code
-  licensed under the [MIT
-  License](http://creativecommons.org/licenses/MIT/), © [Nightscout
-  contributors](http://nightscout.github.io/)
+* Use images for clarity whenever appropriate
 
+### Admonitions
+[Admonitions](https://python-markdown.github.io/extensions/admonition/) are a markdown extension that enable formatted blocks for visually calling out information. The types are: note, info, warning, and danger. Here are some examples of how to write the markdown:
+
+```markdown
+!!! note
+    This admonition uses the default title: 'Note'.
+
+!!! info "My Custom Title"
+    This admonition is blue and has a custom title.
+
+!!! warning ""
+    This admonition is yellow and has no title.
+```
